@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final Project 2</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800&display=swap" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.8/typed.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 62.5%;
+      scroll-behavior: smooth;
+      scroll-padding-top: 6rem;
+      overflow-x: hidden;
+    }
+
+    /* HEADER start */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      padding: 1rem 9%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    }
+
+    header a {
+      text-decoration: none;
+    }
+
+    header .logo {
+      font-size: 3rem;
+      color: #333;
+      font-weight: bolder;
+    }
+
+    header .logo span {
+      color: rgb(131, 170, 206);
+    }
+
+    header .navbar a {
+      font-size: 2.5rem;
+      color: rgb(55, 52, 52);
+      margin-left: 1.5rem;
+    }
+
+    header .navbar a:hover {
+      color: rgb(131, 170, 206);
+    }
+
+    header #toggler {
+      display: none;
+    }
+
+    header .fa-bars {
+      font-size: 3rem;
+      color: #333;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1.5rem;
+      cursor: pointer;
+      border: 0.1rem solid rgba(0, 0, 0, 0.3);
+      display: none;
+    }
+    /* HEADER end */
+
+    /* section A start */
+    .btn-outline-primary {
+      height: 30px !important;
+      width: 80px !important;
+      margin-top: 1rem;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 1.7rem;
+    }
+
+    .btn-outline-primary p {
+      text-size-adjust: 10px !important;
+      text-align: center !important;
+      line-height: 12px;
+    }
+
+    .btn-info {
+      height: 30px !important;
+      width: 100px !important;
+      margin-top: 1rem;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 1.7rem;
+    }
+    .btn-info p {
+      text-size-adjust: 10px !important;
+      text-align: center !important;
+      line-height: 12px;
+    }
+
+    .btn-info:hover {
+      background: rgb(131, 170, 206);
+    }
+
+    .tombol {
+      justify-content: space-around;
+    }
+
+    .home {
+      display: flex;
+      align-items: center;
+      min-height: 100vh;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .home .content-A {
+      max-width: 50rem;
+      padding: 2rem 5%;
+    }
+
+    .home .content-A h3 {
+      font-size: 6rem;
+      color: #333;
+    }
+
+    .home .content-A p {
+      font-size: 1.5rem;
+      color: rgb(81, 79, 79);
+      padding: 1rem 0;
+      line-height: 1.5;
+    }
+
+    .home .content-A .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      border-radius: 5rem;
+      background: #999;
+      color: rgb(0, 0, 0);
+      padding: 0.9rem 3.5rem;
+      cursor: pointer;
+      font-size: 1.7rem;
+    }
+
+    .home .content-A .btn:hover {
+      background: rgb(89, 87, 87);
+    }
+
+    .home .text-center {
+      margin-left: auto;
+    }
+
+    .home .carousel-inner img {
+      height: 400px;
+      width: 2000px;
+      max-width: 100%;
+    }
+    /* section A end*/
+
+    /* section B start*/
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-bottom-right-radius: 0px;
+    }
+
+    .card h1 {
+      font-size: 25px;
+      color: #333;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .container-lg p {
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .gallery img {
+      background-color: azure;
+      padding: 15px;
+      width: 100%;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+
+    #gallery-modal .modal-img {
+      width: 100%;
+    }
+
+    /* section B end*/
+
+    /* section C start*/
+
+    .heading {
+      text-align: center;
+      font-size: 4rem;
+      color: #333;
+      padding: 1rem;
+      margin: 2rem 0;
+    }
+
+    section {
+      padding: 2rem 5%;
+    }
+
+    .section-C .content-C {
+      justify-content: space-between;
+      display: flex;
+    }
+
+    .section-C .container h1 {
+      font-size: 25px;
+      color: #333;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .section-C .container p {
+      font-size: 14px;
+      text-align: center;
+      color: #333;
+      font-style: italic;
+    }
+
+    .section-C .content-C #typed {
+      color: blue;
+    }
+
+    .section-C .content-C .typed h1 {
+      font-size: 20px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      color: #333;
+      width: 55%;
+      margin-top: 3rem;
+    }
+
+    .section-C .content-C .typed h3 {
+      font-size: 2.5rem;
+      color: #333;
+    }
+    .section-C .content-C .typed p {
+      font-size: 14px;
+      color: grey;
+      padding: 0.5rem 0;
+      padding-top: 1rem;
+      line-height: 1.5;
+      margin-top: 1rem;
+    }
+
+    .section-C .content-C img {
+      height: 250px;
+    }
+
+    .plan-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .plan-section .plan {
+      width: 300px;
+      height: 370px;
+      text-align: center;
+      padding: 30px 20px;
+      margin-right: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0.6rem 1.6rem #b3b5c6;
+    }
+
+    .plan-section .plan .plan-price {
+      font-size: 4rem;
+    }
+
+    .plan-section .plan .dollar {
+      font-size: 2rem;
+      font-weight: 400;
+      vertical-align: middle;
+    }
+
+    .plan-section .plan .plan-features .plan-item {
+      padding: 15px 0;
+      border-bottom: 1px solid #b3b5c6;
+    }
+
+    .plan-section .plan .btn {
+      display: block;
+      background-color: #696fdd;
+      padding: 10px;
+      margin-top: 20px;
+      color: #f6f6fe;
+      border-radius: 5px;
+    }
+
+    .plan-section .plan .btn:hover {
+      background-color: #f6f6fe;
+      color: #494c5f;
+      border: 1px solid #696fdd;
+      font-weight: 900;
+    }
+
+    .plan-section .plan .btn-blue {
+      background-color: #f6f6fe;
+      color: #696fdd;
+    }
+
+    .plan-section .plan .btn-blue:hover {
+      background-color: #696fdd;
+      color: #f6f6fe;
+      border: 1px solid #f6f6fe;
+    }
+
+    .plan-section .basic {
+      background-color: #f6f6f6;
+    }
+
+    .plan-section .pro {
+      background-color: #696fdd;
+      color: #f6f6fe;
+      height: 400px;
+    }
+
+    .plan-section .master {
+      background-color: #f6f6f6;
+    }
+
+    /* section C end*/
+
+    /* section D start*/
+    .contact .content-D {
+      text-align: center;
+      font-size: 4rem;
+      color: #333;
+      padding: 5rem;
+      margin: 2rem 0;
+    }
+
+    .contact .content-D h1 {
+      text-align: center;
+      font-size: 4rem;
+      color: #333;
+      margin: 2rem 0;
+    }
+
+    .contact .content-D p {
+      font-size: 14px;
+      color: grey;
+      padding: 0.5rem 0;
+      line-height: 1.5;
+    }
+
+    .contact .content-D .box {
+      font-size: 14px;
+      color: grey;
+      padding: 0.5rem 0;
+      line-height: 1.5;
+    }
+
+    .box-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .box-container .box {
+      flex: 1 1 25rem;
+      margin-top: 7rem;
+    }
+
+    .box-container .box h3 {
+      color: #333;
+      font-size: 2.5rem;
+      padding: 1rem 0;
+    }
+
+    .box-container .box a {
+      display: block;
+      color: #666;
+      font-size: 1.5rem;
+      padding: 1rem 0;
+      text-decoration: none;
+    }
+
+    .box-container {
+      margin-top: 5rem;
+    }
+
+    .content-D {
+      background: rgb(214, 211, 211);
+    }
+
+    .form-box {
+      font-size: 20px;
+    }
+
+    .form-box input {
+      font-size: 15px;
+      color: #000;
+      padding: 10px 50px;
+      border-radius: 5px;
+      background: #ececec;
+      border: none;
+      outline: none;
+    }
+
+    .form-box button {
+      font-size: 15px;
+      color: #fff;
+      padding: 10px 10px;
+      border-radius: 5px;
+      background: #4769d8;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .form-box button:hover {
+      background: #49516a;
+    }
+    /* section D end*/
+  </style>
+
+  <body>
+    <!--NAVBAR-->
+    <header>
+      <input type="checkbox" name="" id="toggler" />
+      <label for="toggler" class="fas fa-bars"></label>
+
+      <a href="#" class="logo">Kha<span>Pan</span></a>
+
+      <nav class="navbar">
+        <a href="#section-A">Home</a>
+        <a href="#section-B">Product</a>
+        <a href="#section-C">About</a>
+        <a href="#section-D">Contact</a>
+      </nav>
+
+      <div class="tombol">
+        <button class="btn btn-outline-primary" type="submit" id="btn2"><p>Login</p></button>
+        <button class="btn btn-info" type="submit" id="btn1"><p>Sign Up</p></button>
+      </div>
+    </header>
+    <!--NAVBAR-->
+
+    <!--SECTION A-->
+    <section class="home" id="section-A" style="background-color: rgb(216, 228, 239)">
+      <div class="content-A">
+        <h3>
+          Makanan <br />
+          Khas Balikpapan
+        </h3>
+        <p>Menjual makanan ter enak khas Balikpapan yang sangat anda tidak bisa lupakan</p>
+        <button type="button" class="btn btn-primary" id="btn3">Order Here</button>
+      </div>
+      <div class="text-center">
+        <div id="carouselExampleCaptions" class="carousel slide col-lg-6 offset-lg-6 rounded" data-bs-ride="false">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="image/abon-kepiting.jpg" class="image-fluid rounded" class="d-block w-100" alt="..." />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Abon Kepiting</h5>
+                <p>Sangat Gurih dan tersedia berbagai macam rasa</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="image/amplang.jpg" class="image-fluid rounded" class="d-block w-100" alt="..." />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Amplang</h5>
+                <p>Renyah dan sangat lezat untuk menemani di waktu senggang</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="image/bakpia.jpg" class="image-fluid rounded" alt="..." />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Bakpia</h5>
+                <p>Makanan ringan dan banyak rasa untuk dipilih seperti coklat,keju dan kacang hijau</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!--SECTION A-->
+
+    <!--SECTION B-->
+    <section class="section-B" id="section-B">
+      <div class="cream-bg">
+        <div class="container">
+          <div class="row g-5 justify-content-evenly">
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="row g-0" style="background: rgb(205, 205, 205)">
+                  <div class="col-6 col-md-5">
+                    <img src="image/bubur gunting.jpg" class="card-img img-fluid rounded-start" />
+                  </div>
+                  <div class="col-6 col-md-7">
+                    <div class="card-body d-flex flex-column">
+                      <div class="h-100">
+                        <h3 class="card-title">Product</h3>
+                        <h3 class="card-title">Makanan</h3>
+                        <p class="card-text">
+                          Kami menawarkan produk makanan ini dengan sangat efisien <br />
+                          serta dikemas dengan baik dan memberikan kepuasan <br />
+                          terhadap pelanggan.Contoh nya seperti Bubur gunting di gambar ini.
+                        </p>
+                        <br />
+                      </div>
+                      <button type="button" id="btn4" class="btn btn-primary">Klik Untuk Lebih Lengkapnya !</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="gallery min-vh-100">
+        <div class="card">
+          <div class="card-body">
+            <div class="container-lg">
+              <h1>Product</h1>
+              <p>Dibawah ini tersedia berbagai macam makanan khas Balikpapan</p>
+              <div class="row row-cols-1 row-cols-md-4 g-4">
+                <div class="col">
+                  <img src="image/abon-kepiting.jpg" class="gallery-item" />
+                </div>
+                <div class="col">
+                  <img src="image/amplang.jpg" class="gallery-item" />
+                </div>
+                <div class="col">
+                  <img src="image/bakpia.jpg" class="gallery-item" />
+                </div>
+                <div class="col">
+                  <img src="image/bubur gunting.jpg" class="gallery-item" />
+                </div>
+                <div class="col">
+                  <img src="image/nasi-bakar-seafood.jpg" class="gallery-item" />
+                </div>
+                <div class="col">
+                  <img src="image/peyek-kepiting.jpg" class="gallery-item" />
+                </div>
+                <div class="col">
+                  <img src="image/ubi-ungu.jpg" class="gallery-item" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--SECTION B-->
+
+    <!--SECTION C-->
+
+    <section class="section-C" id="section-C" style="background-color: rgb(216, 228, 239)">
+      <h1 class="heading"><b> ABOUT </b></h1>
+
+      <div class="content-C">
+        <div class="typed">
+          <h3>Apa itu KhaPan?</h3>
+          <p style="font-style: italic">KhaPan merupakan singkatan dari Khas Balikpapan.</p>
+          <h1>
+            Perusahaan ini menjual berbagai macam makanan khas balikpapan yang bertujuan untuk mempermudah konsumen mendapatkan makanan khas daerah balikpapan, seperti <i><span id="typed"></span> </i>
+          </h1>
+        </div>
+        <img src="image/khapan.jpeg" alt="" />
+      </div>
+
+      <div class="container">
+        <h1>PRICING</h1>
+        <p>Kami menawarkan salah satu harga paling kompetitif di pasar untuk semua orang.</p>
+      </div>
+
+      <div class="plan-section">
+        <div class="plan basic">
+          <h2 class="plan-heading">Basic</h2>
+          <h3 class="plan-price"><span class="dollar">Rp</span>29.000</h3>
+          <ul class="plan-features">
+            <li class="plan-item">1 pcs varian rasa</li>
+            <li class="plan-item">kemasan plastik</li>
+          </ul>
+          <a href="#" class="btn buy-now" style="margin-top: 10rem">Buy Now</a>
+        </div>
+
+        <div class="plan pro">
+          <h2 class="plan-heading">Premium</h2>
+          <h3 class="plan-price"><span class="dollar">Rp</span>130.000</h3>
+          <ul class="plan-features">
+            <li class="plan-item">4 pcs varian rasa</li>
+            <li class="plan-item">gratis ongkir</li>
+            <li class="plan-item">kemasan box</li>
+          </ul>
+          <a href="#" class="btn btn-blue" style="margin-top: 7rem">Buy Now</a>
+        </div>
+
+        <div class="plan master">
+          <h2 class="plan-heading">Enterprise</h2>
+          <h3 class="plan-price"><span class="dollar">Rp</span>200.000</h3>
+          <ul class="plan-features">
+            <li class="plan-item">mix varian rasa</li>
+            <li class="plan-item">gratis ongkir</li>
+            <li class="plan-item">kemasan box</li>
+            <li class="plan-item">sovenir</li>
+          </ul>
+          <a href="#" class="btn buy-now">Buy Now</a>
+        </div>
+      </div>
+    </section>
+    <!--SECTION C-->
+
+    <!--SECTION D-->
+    <section class="section-D" id="section-D">
+      <div class="contact">
+        <div class="content-D">
+          <h1><b> Kami membuat makanan berkualitas setiap hari </b></h1>
+          <p>Terima berita terbaru, pembaruan, diskon, dan banyak hal lainnya setiap minggu.</p>
+          <form action="#">
+            <div class="form-box">
+              <input type="text" name="EmailAddres" placeholder="Masukkan email" />
+              <button type="button" id="btn5">Submit</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="box-container">
+          <div class="box">
+            <h3>Quick links</h3>
+            <a href="#">home</a>
+            <a href="#">about</a>
+            <a href="#">products</a>
+            <a href="#">contact</a>
+          </div>
+
+          <div class="box">
+            <h3>Support</h3>
+            <a href="#">Get help</a>
+            <a href="#">Terms of service</a>
+          </div>
+
+          <div class="box">
+            <h3>Locations</h3>
+            <a href="#">MT Haryono</a>
+            <a href="#">Kampung Timur</a>
+            <a href="#">Gunung Sari</a>
+            <a href="#">Gunung Kawi</a>
+          </div>
+
+          <div class="box">
+            <h3>Contact info</h3>
+            <a href="#">example@gmail.com</a>
+            <a href="#">balikpapan, indonesia - +62</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--SECTION D-->
+
+    <!-- Modal -->
+    <div class="modal fade" id="gallery-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Makanan Balikpapan</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="image/abon-kepiting.jpg" class="modal-img" alt="modal img" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="dist/sweetalert2.all.min.js"></script>
+    <script>
+      document.addEventListener('click', function (e) {
+        if (e.target.classList.contains('gallery-item')) {
+          const src = e.target.getAttribute('src');
+          document.querySelector('.modal-img').src = src;
+          const myModal = new bootstrap.Modal(document.getElementById('gallery-modal'));
+          myModal.show();
+        }
+      });
+      new Typed('#typed', {
+        strings: ['amplang', 'abon kepiting', 'onde-onde ubi ungu', 'nasi bakar seafood', 'bubur gunting', 'peyek kepiting'],
+        typeSpeed: 40,
+        delaySpeed: 90,
+        loop: true,
+      });
+
+      const btn = document.getElementById('btn1');
+      btn.addEventListener('click', function () {
+        Swal.fire({
+          title: 'From Sign Up?',
+          html: '<input id="swal-input1" class="swal2-input" placeholder="Masukan Username">' + '<input id="swal-input2" class="swal2-input"placeholder="Masukan Password">',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Input',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire('Selesai!', 'Data Mu Berhasil Di Input', 'success');
+          }
+        });
+      });
+      const btnn = document.getElementById('btn2');
+      btnn.addEventListener('click', function () {
+        Swal.fire({
+          title: 'Form Login?',
+          html: '<input id="swal-input1" class="swal2-input" placeholder="Masukan Username">' + '<input id="swal-input2" class="swal2-input"placeholder="Masukan Password">',
+          text: 'Kamu Tidak Bisa Kembali Lagi!',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Input',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire('Selsai!', 'Selamat Datang', 'success');
+          }
+        });
+      });
+      const btnn1 = document.getElementById('btn3');
+      btnn1.addEventListener('click', function () {
+        Swal.fire({
+          title: 'Abon Kepiting!',
+          imageUrl: 'https://ecs7.tokopedia.net/blog-tokopedia-com/uploads/2018/12/makanan-khas-Balikpapan-4-Ide-Traveling.jpg',
+          imageWidth: 400,
+          imageHeight: 200,
+          text: 'Masukan Jumlah Pesanan Abon Kepting.' + 'Seharga Rp.15.000 per satuan',
+          input: 'text',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Order Now',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire('Selsai!', 'Terima Kasih Telah Memesan', 'success');
+          }
+        });
+      });
+      const btnn2 = document.getElementById('btn4');
+      btnn2.addEventListener('click', function () {
+        Swal.fire({
+          title: 'Lezat!',
+          text: 'Dibuat dari tepung ketan, bubur gunting ini biasanya dijadikan makanan utama. Sesuai namanya, bubur gunting dibuat dengan proses digunting-gunting. Dimana adonan digunting sebelum kemudian dimasak dengan rebusan kuah santan dan gula merah.Paduan bahan-bahan tersebut menjadikan rasa bubur gunting manis dan gurih. Tekstur bubur gunting sendiri begitu lembut dan sedikit lengket, ya karena bahan utamanya adalah tepung ketan',
+          imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-zT_kHA0sGcFFSzzQfY0YYxtIJNPLGVSmBKbfkLKNswHURHhh',
+          imageWidth: 400,
+          imageHeight: 200,
+        });
+      });
+      const btnn3 = document.getElementById('btn5');
+      btnn3.addEventListener('click', function () {
+        Swal.fire('Good job!', 'Submit Telah Berhasil', 'success');
+      });
+    </script>
+  </body>
+</html>
